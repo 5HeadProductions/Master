@@ -15,7 +15,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Jump1",
+                    "name": "Jump",
                     "type": "Button",
                     "id": "bd78b03c-2be8-4f42-b3db-0f7aa5c59d25",
                     "expectedControlType": "Button",
@@ -24,10 +24,19 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Camera",
+                    "name": "CameraX",
                     "type": "PassThrough",
                     "id": "5b0a951f-7258-424a-94b6-a368df171759",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CameraY",
+                    "type": "PassThrough",
+                    "id": "8708566f-dda2-4983-b359-5364108f7de9",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -96,18 +105,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump1",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "b50349c5-c4e7-4ca2-b096-61c4c44b5b26",
-                    "path": "<Mouse>/delta",
+                    "path": "<Mouse>/delta/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Camera",
+                    "action": "CameraX",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21a19eb1-f994-4656-88fc-36277a0da0c0",
+                    "path": "<Mouse>/delta/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraY",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
