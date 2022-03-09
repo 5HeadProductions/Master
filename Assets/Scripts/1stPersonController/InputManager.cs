@@ -23,28 +23,18 @@ public class InputManager : MonoBehaviour
         playerInput.Enable();
         playerInput.Player.Movement.performed += SetHorizontalInput;
         playerInput.Player.Jump.performed += context => movement.OnJumpPressed();
-        playerInput.Player.CameraX.performed += SetMouseInputX;
-        playerInput.Player.CameraY.performed += SetMouseInputY;
+        playerInput.Player.Look.performed += context => mouseInput = context.ReadValue<Vector2>();
     }
     public void Update()
     {
         movement.GetHorizontalMovement(horizontalInput);
-        lookMovement.GetMouseInput(mouseInput);
+        lookMovement.mouseLook = mouseInput;
     }
     public void SetHorizontalInput(InputAction.CallbackContext context)
     {
         horizontalInput = context.ReadValue<Vector2>(); // x and z coordinates the player is moving
     }
 
-    public void SetMouseInputX(InputAction.CallbackContext context)
-    {
-        mouseInput.x = context.ReadValue<float>();
-
-    }
-    public void SetMouseInputY(InputAction.CallbackContext context)
-    {
-        mouseInput.y = context.ReadValue<float>();
-    }
     public void OnDestroy()
     {
         playerInput.Disable();

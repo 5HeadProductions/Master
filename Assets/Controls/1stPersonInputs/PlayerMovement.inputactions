@@ -24,19 +24,10 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "CameraX",
+                    "name": "Look",
                     "type": "PassThrough",
-                    "id": "5b0a951f-7258-424a-94b6-a368df171759",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "CameraY",
-                    "type": "PassThrough",
-                    "id": "8708566f-dda2-4983-b359-5364108f7de9",
-                    "expectedControlType": "Axis",
+                    "id": "c49e177b-14dc-4343-8fcb-16c580078e9a",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -111,23 +102,12 @@
                 },
                 {
                     "name": "",
-                    "id": "b50349c5-c4e7-4ca2-b096-61c4c44b5b26",
-                    "path": "<Mouse>/delta/x",
+                    "id": "4df5d237-0b37-4501-88a4-256acdfec9d8",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "CameraX",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "21a19eb1-f994-4656-88fc-36277a0da0c0",
-                    "path": "<Mouse>/delta/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CameraY",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

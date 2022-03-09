@@ -6,15 +6,13 @@ using UnityEngine;
 /// </summary>
 public class Movement : MonoBehaviour
 {
+    public PlayerStats playerStatsScriptableObject;
     [SerializeField]
     CharacterController characterController;
-    [SerializeField]
-    public float movementSpeed = 10f;
-    [SerializeField]
-    public float jumpHeight = 10;
+    public float movementSpeed => playerStatsScriptableObject.movementSpeed;
+    public float jumpHeight => playerStatsScriptableObject.jumpHeight;
+    public float gravity => playerStatsScriptableObject.gravity;
     public bool jumpPressed;
-    [SerializeField]
-    public float gravity = -9.81f;
     Vector3 verticalVelocity = Vector3.zero;
     Vector2 horizontalMovement;
     [SerializeField]
@@ -23,7 +21,6 @@ public class Movement : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(transform.position, .1f, groundMask);
-        //condition ? consequence : alternative
         if (isGrounded) verticalVelocity.y = 0;
         Vector3 horizontalVelocity = (transform.right * horizontalMovement.x + transform.forward * horizontalMovement.y) * movementSpeed;
         characterController.Move(horizontalVelocity * Time.deltaTime);
@@ -36,11 +33,8 @@ public class Movement : MonoBehaviour
             }
             jumpPressed = false;
         }
-
         verticalVelocity.y += gravity * Time.deltaTime;
         characterController.Move(verticalVelocity * Time.deltaTime);
-
-
     }
 
     public void GetHorizontalMovement(Vector2 horizontalInput)
