@@ -5,21 +5,11 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
 
-    private bool hit = false;
-    public bool usePool = false;
-
-
-
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        if (hit)
-        {
-            Destroy(this.gameObject);
-        }
-        else if (hit && usePool)
-        {
-            collision.gameObject.SetActive(false);
-        }
+
+        this.gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 
 }
